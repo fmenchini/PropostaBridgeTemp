@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise Executiva de Transição: Google → Bridge & Co.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#0B1120',
+              card: '#111827',
+              border: '#1F2937',
+              accent: '#10B981',
+              google: '#3B82F6',
+              bridge: '#10B981',
+              warning: '#F59E0B',
+              danger: '#EF4444'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Estilização customizada para sliders */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #10B981;
+      cursor: pointer;
+      margin-top: -7px;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+      border: 2px solid #fff;
+      transition: transform 0.15s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: #1F2937;
+      border-radius: 999px;
+    }
+    .glass-panel {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-[#0B1120] text-slate-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+
+  <!-- Navbar Fixa -->
+  <nav class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg">
+            B&G
+          </div>
+          <div>
+            <span class="font-bold text-sm sm:text-base tracking-tight text-white">Decisão Executiva</span>
+            <span class="hidden sm:inline-block text-xs text-slate-400 ml-2 border-l border-slate-700 pl-2">Google vs. Bridge & Co.</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+          <a href="#panorama" class="hover:text-emerald-400 transition">Panorama 2027</a>
+          <a href="#simulador" class="hover:text-emerald-400 transition font-medium text-emerald-400">Simulador Interativo</a>
+          <a href="#trienio" class="hover:text-emerald-400 transition">Visão 3 Anos & Equity</a>
+          <a href="#checklist" class="hover:text-emerald-400 transition">Blindagem Contratual</a>
+        </div>
+        <a href="#simulador" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs sm:text-sm transition shadow-lg shadow-emerald-500/20">
+          Simular Metas
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-800/60">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-900/20 via-slate-900/0 to-blue-900/20 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-medium text-emerald-400 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Análise de Transição Societária • Entrada Prevista: Jan/2027
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6">
+          Quanto vale trocar a previsibilidade do <span class="text-blue-400">Google</span> pelo upside de sócio na <span class="text-emerald-400">Bridge & Co.</span>?
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+          Um raio-X visual dos seus números reais (2026–2029), o custo exato de oportunidade na saída e o volume de vendas de produtos/licenças necessário para superar seu pacote atual.
+        </p>
+      </div>
+
+      <!-- KPI Cards Principais -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <!-- Card 1 -->
+        <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 shadow-xl">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium uppercase tracking-wider text-blue-400">Pacote Google 2027</span>
+            <span class="px-2 py-0.5 text-[11px] rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20">Base + Bônus + GSU</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white">R$ 1,15M</div>
+          <p class="text-xs text-slate-400 mt-2">R$ 1.151.062/ano brutos (~R$ 95,9k/mês médios)</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 shadow-xl">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium uppercase tracking-wider text-emerald-400">Piso Bridge 2027</span>
+            <span class="px-2 py-0.5 text-[11px] rounded-md bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Sem Comissões</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white">R$ 392k</div>
+          <p class="text-xs text-slate-400 mt-2">R$ 28k/mês (R$ 336k) + Bônus 2 salários (R$ 56k)</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 shadow-xl">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium uppercase tracking-wider text-amber-400">Gap Anual a Cobrir</span>
+            <span class="px-2 py-0.5 text-[11px] rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20">66% do Pacote</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">- R$ 759k</div>
+          <p class="text-xs text-slate-400 mt-2">Exige R$ 5,06M de margem retida (a 15% comissão)</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 shadow-xl">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium uppercase tracking-wider text-purple-400">Ponto de Empate</span>
+            <span class="px-2 py-0.5 text-[11px] rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">Margem Retida 30%</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white">R$ 16,87M</div>
+          <p class="text-xs text-slate-400 mt-2">Em vendas brutas/ano (~R$ 1,41M/mês em produtos)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção 1: Panorama Comparativo -->
+  <section id="panorama" class="py-16 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">1. Anatomia da Troca: Onde está o risco e onde está o ganho</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Comparação direta entre a estrutura de remuneração do Google em 2027 e o piso garantido da Bridge antes das vendas.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Bloco Google -->
+        <div class="rounded-2xl bg-slate-900 border border-blue-500/30 p-6 sm:p-8 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Cenário Base (Manter)</span>
+              <h3 class="text-xl font-bold text-white mt-1">Google Brasil (Projeção 2027)</h3>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-extrabold text-blue-400">R$ 1.151.062</div>
+              <div class="text-xs text-slate-400">Pico de R$ 1,46M em 2026</div>
+            </div>
+          </div>
+
+          <!-- Barras de composição -->
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-slate-300 font-medium">Salário Base Fixo</span>
+                <span class="text-white font-semibold">R$ 532.799 <span class="text-slate-400 text-xs">(46,3%)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style="width: 46.3%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-slate-300 font-medium">Bônus Alvo (100% Sales Plan)</span>
+                <span class="text-white font-semibold">R$ 532.799 <span class="text-slate-400 text-xs">(46,3%)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-400 rounded-full" style="width: 46.3%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-slate-300 font-medium">Equity (GSUs Vesting 2027)</span>
+                <span class="text-white font-semibold">R$ 85.464 <span class="text-slate-400 text-xs">(7,4%)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400 rounded-full" style="width: 7.4%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-2 gap-4 text-xs text-slate-300">
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 block mb-1">Liquidez do Equity</span>
+              <strong class="text-white">Imediata no vesting</strong> (ações listadas)
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 block mb-1">GSUs deixadas na mesa</span>
+              <strong class="text-rose-400">R$ 177.596</strong> (2027–2029)
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco Bridge -->
+        <div class="rounded-2xl bg-slate-900 border border-emerald-500/30 p-6 sm:p-8 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Proposta Atualizada</span>
+              <h3 class="text-xl font-bold text-white mt-1">Bridge & Co. (Sócio Head)</h3>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-extrabold text-emerald-400">R$ 392.000 <span class="text-xs font-normal text-slate-400">+ Variável</span></div>
+              <div class="text-xs text-slate-400">Piso fixo + bônus anual</div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-slate-300 font-medium">Retirada Mensal (Pró-labore + Antec. Lucro)</span>
+                <span class="text-white font-semibold">R$ 336.000 <span class="text-slate-400 text-xs">(R$ 28k/mês)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 rounded-full" style="width: 29.2%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-slate-300 font-medium">Bônus Anual (2 salários sob meta)</span>
+                <span class="text-white font-semibold">R$ 56.000 <span class="text-slate-400 text-xs">(4,9% do alvo Google)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-teal-400 rounded-full" style="width: 4.9%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1.5">
+                <span class="text-amber-300 font-medium">Gap a superar com Comissões (15% líq.)</span>
+                <span class="text-amber-400 font-semibold">R$ 759.062 <span class="text-slate-400 text-xs">(65,9%)</span></span>
+              </div>
+              <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-500/80 rounded-full" style="width: 65.9%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-2 gap-4 text-xs text-slate-300">
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 block mb-1">Sign-in Equity (1,0%)</span>
+              <strong class="text-emerald-400">R$ 130.000</strong> <span class="text-slate-400">(cliff 3 anos)</span>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 block mb-1">Aceleração Performance</span>
+              <strong class="text-white">Até 2,0%</strong> (+0,5% em 27 e 28)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2: Simulador Interativo -->
+  <section id="simulador" class="py-16 bg-slate-950/50 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Ferramenta de Decisão</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">2. Simulador de Potencial & Ponto de Empate</h2>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">Ajuste o volume anual de vendas de produtos/licenças, a margem líquida retida pela Bridge e os dividendos esperados para ver onde a transição passa a valer a pena.</p>
+        </div>
+        <!-- Presets rápidos -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setPreset(10, 20, 0)" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition">Conservador (R$ 10M)</button>
+          <button onclick="setPreset(16.87, 30, 0)" class="px-3 py-1.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-xs font-medium text-blue-300 border border-blue-500/40 transition">Empate Exato (R$ 16,9M)</button>
+          <button onclick="setPreset(25, 30, 50)" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-xs font-medium text-emerald-300 border border-emerald-500/40 transition">Cenário Alvo (R$ 25M)</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Controles (5 colunas) -->
+        <div class="lg:col-span-5 rounded-2xl bg-slate-900 border border-slate-800 p-6 space-y-6 shadow-xl">
+          <!-- Slider 1: Vendas Anuais -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="salesSlider" class="text-sm font-medium text-slate-200">Vendas Brutas de Produtos / Ano</label>
+              <span id="salesValue" class="text-base font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-lg border border-emerald-500/20">R$ 20,0M</span>
+            </div>
+            <input type="range" id="salesSlider" min="2" max="45" step="0.5" value="20" class="w-full">
+            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+              <span>R$ 2M</span>
+              <span>R$ 16,9M (Empate)</span>
+              <span>R$ 45M</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Margem Retida pela Bridge -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="marginSlider" class="text-sm font-medium text-slate-200">Margem Líquida Retida pela Bridge</label>
+              <span id="marginValue" class="text-base font-bold text-blue-400 bg-blue-500/10 px-2.5 py-0.5 rounded-lg border border-blue-500/20">30%</span>
+            </div>
+            <input type="range" id="marginSlider" min="10" max="40" step="1" value="30" class="w-full">
+            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+              <span>10% (Repasse apertado)</span>
+              <span>30% (Exemplo proposta)</span>
+              <span>40%</span>
+            </div>
+          </div>
+
+          <!-- Slider 3: Dividendos Anuais do Equity -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label for="dividendSlider" class="text-sm font-medium text-slate-200">Dividendos Anuais Estimados (1%–2%)</label>
+              <span id="dividendValue" class="text-base font-bold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-lg border border-purple-500/20">R$ 40k</span>
+            </div>
+            <input type="range" id="dividendSlider" min="0" max="250" step="10" value="40" class="w-full">
+            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+              <span>R$ 0</span>
+              <span>R$ 100k</span>
+              <span>R$ 250k</span>
+            </div>
+          </div>
+
+          <!-- Toggle Bônus 2 Salários -->
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <div>
+              <span class="text-sm font-medium text-slate-200 block">Incluir Bônus Anual (2 salários)</span>
+              <span class="text-xs text-slate-400">R$ 56.000/ano mediante meta</span>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="bonusToggle" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Resultados Dinâmicos (7 colunas) -->
+        <div class="lg:col-span-7 rounded-2xl bg-slate-900 border border-slate-800 p-6 sm:p-8 shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+            <div>
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Resultado Financeiro Simulado (Ano 1)</span>
+              <div id="verdictBadge" class="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                Supera o Google em +R$ 180.938/ano
+              </div>
+            </div>
+            <div class="text-left sm:text-right">
+              <span class="text-xs text-slate-400 block">Seu Ganho Total na Bridge</span>
+              <span id="bridgeTotalDisplay" class="text-3xl sm:text-4xl font-extrabold text-white">R$ 1.332.000</span>
+            </div>
+          </div>
+
+          <!-- Comparativo Visual em Barras Dinâmicas -->
+          <div class="my-6 space-y-5">
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm mb-1.5">
+                <span class="font-semibold text-blue-400">Google 2027 (Referência Alvo)</span>
+                <span class="font-bold text-white">R$ 1.151.062 / ano</span>
+              </div>
+              <div class="w-full h-6 bg-slate-800 rounded-xl overflow-hidden p-1">
+                <div id="googleBar" class="h-full bg-blue-500 rounded-lg transition-all duration-300" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm mb-1.5">
+                <span class="font-semibold text-emerald-400">Bridge 2027 (Simulado)</span>
+                <span id="bridgeBarLabel" class="font-bold text-white">R$ 1.332.000 / ano</span>
+              </div>
+              <div class="w-full h-6 bg-slate-800 rounded-xl overflow-hidden p-1 flex gap-1">
+                <div id="bridgeFixedBar" class="h-full bg-emerald-600 rounded-l-lg transition-all duration-300" title="Fixo + Bônus"></div>
+                <div id="bridgeCommBar" class="h-full bg-emerald-400 transition-all duration-300" title="Comissão 15%"></div>
+                <div id="bridgeDivBar" class="h-full bg-purple-400 rounded-r-lg transition-all duration-300" title="Dividendos"></div>
+              </div>
+              <div class="flex flex-wrap gap-4 mt-2 text-[11px] text-slate-400">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-600"></span> Fixo + Bônus</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-400"></span> Comissão 15%</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-purple-400"></span> Dividendos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detalhamento numérico -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800">
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block">Margem Retida Bridge</span>
+              <strong id="retainedMarginDisplay" class="text-sm sm:text-base text-white">R$ 6.000.000</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block">Sua Comissão (15%)</span>
+              <strong id="commissionDisplay" class="text-sm sm:text-base text-emerald-400">R$ 900.000</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block">Média Mensal Bruta</span>
+              <strong id="monthlyAvgDisplay" class="text-sm sm:text-base text-white">R$ 111.000</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block">Vendas p/ Empatar</span>
+              <strong id="breakevenSalesDisplay" class="text-sm sm:text-base text-amber-400">R$ 16,87M</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3: Onde está o Potencial Real (Triênio + Equity + Escada) -->
+  <section id="trienio" class="py-16 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">3. Onde está o verdadeiro potencial da proposta?</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">O modelo não ganha do Google no salário fixo — ele ganha em **três alavancas assimétricas** se a vertical de produtos tracionar.</p>
+      </div>
+
+      <!-- 3 Pilares de Potencial -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold mb-4">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Transversalidade na Base Instalada</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Você não começa do zero: tem mandato para vender produtos e licenças <strong class="text-slate-200">em toda a base atual de clientes da Bridge</strong> em co-venda com os sócios de serviços, ganhando 15% líquido sobre a margem retida sem teto de comissão.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold mb-4">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Dobra de Equity sem Aporte (1% → 2%)</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Entrada com <strong class="text-slate-200">1,0% (R$ 130k implícitos)</strong> + aceleradores de <strong class="text-slate-200">+0,5% em 2027</strong> e <strong class="text-slate-200">+0,5% em 2028</strong> via bônus de performance. No valuation de entrada, 2% equivalem a R$ 260k, mas crescem se a vertical de software elevar o múltiplo da consultoria.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold mb-4">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Dividendos + Opção de Compra + Exit</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Diferente de vesting tradicional sem caixa, você recebe <strong class="text-slate-200">dividendos anuais</strong> sobre seu equity desde o início, tem liquidez proporcional imediata em caso de venda da empresa e acesso a compra de mais cotas parceladas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tabela Escada de Vendas -->
+      <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
+        <div class="p-6 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-lg font-bold text-white">Escada de Ganhos por Volume de Vendas (Cenário 30% Margem Retida)</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Considera piso de R$ 392.000/ano (R$ 28k/mês + bônus 2 salários) + 15% líquido sobre margem retida.</p>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 self-start sm:self-auto">
+            Referência Google 2027: R$ 1.151.062
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-950/60 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
+                <th class="py-3.5 px-6">Vendas Brutas / Ano</th>
+                <th class="py-3.5 px-6">Margem Retida (30%)</th>
+                <th class="py-3.5 px-6">Comissão (15% líq.)</th>
+                <th class="py-3.5 px-6">Ganho Total Bridge</th>
+                <th class="py-3.5 px-6">Saldo vs. Google 2027</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/80 text-sm">
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="py-4 px-6 font-medium text-white">R$ 5.000.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 1.500.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 225.000</td>
+                <td class="py-4 px-6 font-semibold text-white">R$ 617.000</td>
+                <td class="py-4 px-6 font-semibold text-rose-400">- R$ 534.062</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="py-4 px-6 font-medium text-white">R$ 10.000.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 3.000.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 450.000</td>
+                <td class="py-4 px-6 font-semibold text-white">R$ 842.000</td>
+                <td class="py-4 px-6 font-semibold text-rose-400">- R$ 309.062</td>
+              </tr>
+              <tr class="bg-blue-500/10 hover:bg-blue-500/15 transition">
+                <td class="py-4 px-6 font-bold text-blue-300">R$ 16.870.000 <span class="text-[11px] font-normal ml-1 px-2 py-0.5 rounded bg-blue-500/20">Empate</span></td>
+                <td class="py-4 px-6 text-blue-200">R$ 5.060.413</td>
+                <td class="py-4 px-6 text-blue-200">R$ 759.062</td>
+                <td class="py-4 px-6 font-bold text-white">R$ 1.151.062</td>
+                <td class="py-4 px-6 font-bold text-blue-400">R$ 0 (Empate)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="py-4 px-6 font-medium text-white">R$ 22.000.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 6.600.000</td>
+                <td class="py-4 px-6 text-emerald-400 font-medium">R$ 990.000</td>
+                <td class="py-4 px-6 font-bold text-white">R$ 1.382.000</td>
+                <td class="py-4 px-6 font-bold text-emerald-400">+ R$ 230.938</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="py-4 px-6 font-medium text-white">R$ 30.000.000</td>
+                <td class="py-4 px-6 text-slate-300">R$ 9.000.000</td>
+                <td class="py-4 px-6 text-emerald-400 font-medium">R$ 1.350.000</td>
+                <td class="py-4 px-6 font-bold text-white">R$ 1.742.000</td>
+                <td class="py-4 px-6 font-bold text-emerald-400">+ R$ 590.938</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 4: Checklist de Blindagem Antes de Assinar -->
+  <section id="checklist" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Proteção Jurídica e Financeira</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">4. Cinco ajustes objetivos antes de bater o martelo</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Pontos identificados na proposta atual e na consulta societária (CNPJ 11.661.731/0001-02) que precisam estar fechados na Carta Convite / Acordo de Sócios.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold shrink-0 mt-0.5">1</div>
+          <div>
+            <h4 class="font-bold text-white text-base">Corrigir "1% do capital social" para "1% das quotas totais"</h4>
+            <p class="text-sm text-slate-400 mt-1">No cadastro, o capital social nominal é R$ 56 mil. Exija que conste <strong class="text-slate-200">1,0% do capital votante/total da sociedade</strong> e especifique em qual CNPJ/Holding (Bridge Consulting ou Bridge Company Participações) o equity será emitido.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold shrink-0 mt-0.5">2</div>
+          <div>
+            <h4 class="font-bold text-white text-base">Fórmula matemática da comissão de 15% líquido</h4>
+            <p class="text-sm text-slate-400 mt-1">Defina por escrito: <code class="text-emerald-300 bg-slate-950 px-1.5 py-0.5 rounded text-xs">(Receita Bruta Licença − Impostos Diretos − Custo Fabricante) × 15%</code>, sem rateio de overhead administrativo e com data fixa de pagamento após liquidação do cliente.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold shrink-0 mt-0.5">3</div>
+          <div>
+            <h4 class="font-bold text-white text-base">Meta de 2027 já definida na assinatura + proporcionalidade</h4>
+            <p class="text-sm text-slate-400 mt-1">Não deixe a meta do acelerador de +0,5% em aberto para definição unilateral. Pactue o número de 2027 agora e inclua gatilho proporcional (ex.: 80% da meta = +0,40% de equity).</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold shrink-0 mt-0.5">4</div>
+          <div>
+            <h4 class="font-bold text-white text-base">Diferenciar saída voluntária vs. desligamento pela empresa</h4>
+            <p class="text-sm text-slate-400 mt-1">Na regra de devolução do 1% em menos de 3 anos, garanta que a perda total se aplica apenas se <strong class="text-slate-200">você pedir para sair</strong>. Em caso de desligamento sem justa causa pela Bridge, preveja vesting proporcional ou compra pelo valuation interno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      Painel comparativo estruturado com base nos dados de compensação Google (2026–2029) e na proposta atualizada de sociedade Bridge & Co.
+    </div>
+  </footer>
+
+  <!-- Script do Simulador Interativo -->
+  <script>
+    const GOOGLE_2027 = 1151062;
+    const BRIDGE_FIXED = 336000; // R$ 28k x 12
+    const BRIDGE_BONUS = 56000;  // 2 salários
+    const COMMISSION_RATE = 0.15;
+
+    const salesSlider = document.getElementById('salesSlider');
+    const marginSlider = document.getElementById('marginSlider');
+    const dividendSlider = document.getElementById('dividendSlider');
+    const bonusToggle = document.getElementById('bonusToggle');
+
+    function formatBRL(value) {
+      return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        maximumFractionDigits: 0
+      });
+    }
+
+    function updateSimulation() {
+      const salesMillions = parseFloat(salesSlider.value);
+      const salesBRL = salesMillions * 1000000;
+      const marginPct = parseFloat(marginSlider.value) / 100;
+      const dividendsBRL = parseFloat(dividendSlider.value) * 1000;
+      const includeBonus = bonusToggle.checked;
+
+      // Atualiza labels dos sliders
+      document.getElementById('salesValue').textContent = `R$ ${salesMillions.toFixed(1).replace('.', ',')}M`;
+      document.getElementById('marginValue').textContent = `${Math.round(marginPct * 100)}%`;
+      document.getElementById('dividendValue').textContent = `R$ ${Math.round(dividendsBRL / 1000)}k`;
+
+      // Cálculos principais
+      const baseAndBonus = BRIDGE_FIXED + (includeBonus ? BRIDGE_BONUS : 0);
+      const retainedMargin = salesBRL * marginPct;
+      const commission = retainedMargin * COMMISSION_RATE;
+      const bridgeTotal = baseAndBonus + commission + dividendsBRL;
+      const diff = bridgeTotal - GOOGLE_2027;
+
+      // Vendas necessárias para empatar na margem atual
+      const gapToCover = Math.max(0, GOOGLE_2027 - baseAndBonus - dividendsBRL);
+      const requiredRetainedMargin = gapToCover / COMMISSION_RATE;
+      const breakevenSalesMillions = (requiredRetainedMargin / marginPct) / 1000000;
+
+      // Atualiza textos
+      document.getElementById('bridgeTotalDisplay').textContent = formatBRL(bridgeTotal);
+      document.getElementById('bridgeBarLabel').textContent = `${formatBRL(bridgeTotal)} / ano`;
+      document.getElementById('retainedMarginDisplay').textContent = formatBRL(retainedMargin);
+      document.getElementById('commissionDisplay').textContent = formatBRL(commission);
+      document.getElementById('monthlyAvgDisplay').textContent = formatBRL(bridgeTotal / 12);
+      document.getElementById('breakevenSalesDisplay').textContent = `R$ ${breakevenSalesMillions.toFixed(2).replace('.', ',')}M`;
+
+      // Atualiza badge de veredito
+      const badge = document.getElementById('verdictBadge');
+      if (diff >= 5000) {
+        badge.className = 'inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30';
+        badge.textContent = `Supera o Google em +${formatBRL(diff)}/ano`;
+      } else if (diff > -5000) {
+        badge.className = 'inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30';
+        badge.textContent = 'Ponto de Empate com o Google 2027';
+      } else {
+        badge.className = 'inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full text-xs font-bold bg-rose-500/15 text-rose-400 border border-rose-500/30';
+        badge.textContent = `Abaixo do Google em ${formatBRL(diff)}/ano`;
+      }
+
+      // Atualiza larguras proporcionais das barras
+      const maxScale = Math.max(GOOGLE_2027, bridgeTotal) * 1.05;
+      document.getElementById('googleBar').style.width = `${(GOOGLE_2027 / maxScale) * 100}%`;
+      document.getElementById('bridgeFixedBar').style.width = `${(baseAndBonus / maxScale) * 100}%`;
+      document.getElementById('bridgeCommBar').style.width = `${(commission / maxScale) * 100}%`;
+      document.getElementById('bridgeDivBar').style.width = `${(dividendsBRL / maxScale) * 100}%`;
+    }
+
+    function setPreset(salesM, marginP, divK) {
+      salesSlider.value = salesM;
+      marginSlider.value = marginP;
+      dividendSlider.value = divK;
+      bonusToggle.checked = true;
+      updateSimulation();
+    }
+
+    salesSlider.addEventListener('input', updateSimulation);
+    marginSlider.addEventListener('input', updateSimulation);
+    dividendSlider.addEventListener('input', updateSimulation);
+    bonusToggle.addEventListener('change', updateSimulation);
+
+    window.onload = function() {
+      updateSimulation();
+    };
+  </script>
+</body>
+</html>
